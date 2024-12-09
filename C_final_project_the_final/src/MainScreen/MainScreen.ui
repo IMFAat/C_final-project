@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+    <object id="MainScreen" class="GtkBox">
+        <property name="name">MainBox</property>
+        <property name="height-request">600</property>
+        <property name="width-request">500</property>
+        <child>
+            <object class="GtkOverlay">
+                <property name="hexpand">TRUE</property>
+                <property name="vexpand">TRUE</property>
+                <property name="halign">GTK_ALIGN_FILL</property>
+                <property name="valign">GTK_ALIGN_FILL</property>
+                <child>
+                    <object class="GtkBox" id="Schedule">
+                        <property name="hexpand">TRUE</property>
+                        <property name="valign">GTK_ALIGN_FILL</property>
+                        <property name="name">Schedule</property>
+                        <child>
+                            <object class="GtkBox">
+                                <property name="halign">GTK_ALIGN_START</property>
+                                <property name="valign">GTK_ALIGN_FILL</property>
+                                <property name="width-request">75</property>
+                                <property name="name">buffer</property>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="GtkBox" id="ContextBox">
+                                <property name="hexpand">TRUE</property>
+                                <property name="valign">GTK_ALIGN_FILL</property>
+                                <property name="orientation">GTK_ORIENTATION_HORIZONTAL</property>
+                                <property name="homogeneous">TRUE</property>
+                                <child>
+                                    <object class="GtkBox">
+                                        <property name="hexpand">TRUE</property>
+                                        <property name="valign">GTK_ALIGN_FILL</property>
+                                        <property name="name">Daily</property>
+                                        <property name="orientation">GTK_ORIENTATION_VERTICAL</property>
+                                        <child>
+                                            <object class="GtkOverlay" id="overlay">
+                                                <property name="hexpand">TRUE</property>
+                                                <property name="vexpand">TRUE</property>
+                                                <child>
+                                                    <object class="GtkBox" id="Added_Activity">
+                                                        <property name="hexpand">TRUE</property>
+                                                        <property name="vexpand">TRUE</property>
+                                                        <property name="orientation">GTK_ORIENTATION_VERTICAL</property>
+                                                        <child>
+                                                            <object class="GtkScrolledWindow" id="Added_Daily_Activity_scrollwindow">
+                                                                <property name="hexpand">TRUE</property>
+                                                                <property name="vexpand">TRUE</property>
+                                                                <property name="name">activity_scrollwindow</property>
+                                                                <child>
+                                                                    <object class="GtkBox" id="Added_Daily_Activity_Box">
+                                                                        <property name="orientation">GTK_ORIENTATION_VERTICAL</property>
+                                                                        <property name="spacing">10</property>
+                                                                    </object>
+                                                                </child>
+                                                            </object>
+                                                        </child>
+                                                        <child>
+                                                            <object class="GtkBox">
+                                                                <property name="height-request">30</property>
+                                                            </object>
+                                                        </child>
+                                                    </object>
+                                                </child>
+                                                <child type="overlay">
+                                                    <!-- overlay覆蓋在Added_Activity上 -->
+                                                    <object class="GtkBox">
+                                                        <property name="valign">GTK_ALIGN_END</property>
+                                                        <property name="hexpand">TRUE</property>
+                                                        <property name="orientation">GTK_ORIENTATION_VERTICAL</property>
+                                                        <child>
+                                                            <object class="GtkBox">
+                                                                <!-- 空box，為了把BottomButtonBoxContainer往下擠 -->
+                                                                <property name="vexpand">TRUE</property>
+                                                                <property name="hexpand">TRUE</property>
+                                                            </object>
+                                                        </child>
+                                                        <child>
+                                                            <object class="GtkBox">
+                                                                <property name="name">BottomButtonBoxContainer</property>
+                                                                <child>
+                                                                    <object id="DailyButtonBox" class="GtkBox">
+                                                                        <property name="name">BottomButtonBox</property>
+                                                                        <property name="orientation">GTK_ORIENTATION_VERTICAL</property>
+                                                                        <child>
+                                                                            <object class="GtkBox" id="DailyContentBox">
+                                                                                <property name="hexpand">TRUE</property>
+                                                                                <property name="orientation">GTK_ORIENTATION_VERTICAL</property>
+                                                                                <child>
+                                                                                    <object class="GtkScrolledWindow" id="Daily_Content_Scrolled">
+                                                                                        <property name="name">ContextScrolledWindow</property>
+                                                                                        <property name="hexpand">TRUE</property>
+                                                                                        <child>
+                                                                                            <object class="GtkBox" >
+                                                                                                <property name="hexpand">TRUE</property>
+                                                                                                <property name="name">Content_Revealer</property>
+                                                                                                <child>
+                                                                                                    <object class="GtkBox">
+                                                                                                        <property name="name">Content_Box</property>
+                                                                                                        <property name="hexpand">TRUE</property>
+                                                                                                        <property name="orientation">GTK_ORIENTATION_VERTICAL</property>
+                                                                                                        <child>
+                                                                                                            <object class="GtkLabel">
+                                                                                                                <property name="name">TextView_Label</property>
+                                                                                                                <property name="label">Daily Activity</property>
+                                                                                                            </object>
+                                                                                                        </child>
+                                                                                                        <child>
+                                                                                                            <object class="GtkEntry" id="Add_Daliy_Activity_TV">
+                                                                                                                <property name="hexpand">TRUE</property>
+                                                                                                                <property name="name">ALL_Textview</property>
+                                                                                                                <property name="height-request">57</property>
+                                                                                                            </object>
+                                                                                                        </child>
+                                                                                                        <child>
+                                                                                                            <object class="GtkLabel">
+                                                                                                                <property name="name">TextView_Label</property>
+                                                                                                                <property name="label">Daily Frequency</property>
+                                                                                                            </object>
+                                                                                                        </child>
+                                                                                                        <child>
+                                                                                                            <object class="GtkSpinButton" id="Add_Frequency">
+                                                                                                                <property name="hexpand">TRUE</property>
+                                                                                                                <property name="name">spinbutton</property>
+                                                                                                            </object>
+                                                                                                        </child>
+                                                                                                        <child>
+                                                                                                            <object class="GtkLabel">
+                                                                                                                <property name="name">TextView_Label</property>
+                                                                                                                <property name="label">Begin Time</property>
+                                                                                                            </object>
+                                                                                                        </child>
+                                                                                                        <child>
+                                                                                                            <object class="GtkBox">
+                                                                                                                <property name="hexpand">TRUE</property>
+                                                                                                                <property name="orientation">GTK_ORIENTATION_HORIZONTAL</property>
+                                                                                                                <child>
+                                                                                                                    <object class="GtkSpinButton" id="begin_hour">
+                                                                                                                        <property name="hexpand">TRUE</property>
+                                                                                                                        <property name="name">spinbutton</property>
+                                                                                                                        <property name="hexpand">TRUE</property>
+                                                                                                                    </object>
+                                                                                                                </child>
+                                                                                                                <child>
+                                                                                                                    <object class="GtkSpinButton" id="begin_minute">
+                                                                                                                        <property name="hexpand">TRUE</property>
+                                                                                                                        <property name="name">spinbutton</property>
+                                                                                                                        <property name="hexpand">TRUE</property>
+                                                                                                                    </object>
+                                                                                                                </child>
+                                                                                                            </object>
+                                                                                                        </child>
+                                                                                                        <child>
+                                                                                                            <object class="GtkLabel">
+                                                                                                                <property name="name">TextView_Label</property>
+                                                                                                                <property name="label">End Time</property>
+                                                                                                            </object>
+                                                                                                        </child>
+                                                                                                        <child>
+                                                                                                            <object class="GtkBox">
+                                                                                                                <property name="hexpand">TRUE</property>
+                                                                                                                <property name="orientation">GTK_ORIENTATION_HORIZONTAL</property>
+                                                                                                                <child>
+                                                                                                                    <object class="GtkSpinButton" id="end_hour">
+                                                                                                                        <property name="hexpand">TRUE</property>
+                                                                                                                        <property name="name">spinbutton</property>
+                                                                                                                    </object>
+                                                                                                                </child>
+                                                                                                                <child>
+                                                                                                                    <object class="GtkSpinButton" id="end_minute">
+                                                                                                                        <property name="hexpand">TRUE</property>
+                                                                                                                        <property name="name">spinbutton</property>
+                                                                                                                    </object>
+                                                                                                                </child>
+                                                                                                            </object>
+                                                                                                        </child>
+                                                                                                        <child>
+                                                                                                            <object class="GtkButton" id="Add_Daliy_Activity_BT">
+                                                                                                                <property name="name">check</property>
+                                                                                                                <property name="label">ADD</property>
+                                                                                                                <property name="height-request">50</property>
+                                                                                                            </object>
+                                                                                                        </child>
+                                                                                                    </object>
+                                                                                                </child>
+                                                                                            </object>
+                                                                                        </child>
+                                                                                    </object>
+                                                                                </child>
+                                                                            </object>
+                                                                        </child>
+                                                                        <child>
+                                                                            <object class="GtkButton" id="DailyAddButton">
+                                                                                <property name="hexpand">TRUE</property>
+                                                                                <property name="halign">GTK_ALIGN_FILL</property>
+                                                                                <property name="height-request">50</property>
+                                                                                <property name="label">+</property>
+                                                                                <property name="name">Add</property>
+                                                                            </object>
+                                                                        </child>
+                                                                    </object>
+                                                                </child>
+                                                            </object>
+                                                        </child>
+                                                    </object>
+                                                </child>
+                                            </object>
+                                        </child>
+                                    </object>
+                                </child>
+                                <child>
+                                    <object class="GtkBox">
+                                        <property name="hexpand">TRUE</property>
+                                        <property name="valign">GTK_ALIGN_FILL</property>
+                                        <property name="name">Weekly</property>
+                                        <property name="orientation">GTK_ORIENTATION_VERTICAL</property>
+                                        <child>
+                                            <object class="GtkOverlay">
+                                                <property name="vexpand">TRUE</property>
+                                                <property name="hexpand">TRUE</property>
+                                                <child>
+                                                    <object class="GtkBox">
+                                                        <property name="halign">GTK_ALIGN_FILL</property>
+                                                        <property name="vexpand">TRUE</property>
+                                                        <property name="orientation">GTK_ORIENTATION_VERTICAL</property>
+                                                        <child>
+                                                            <object class="GtkScrolledWindow" id="Added_Weekly_Activity_scrollwindow">
+                                                                <property name="vexpand">TRUE</property>
+                                                                <property name="hexpand">TRUE</property>
+                                                                <property name="name">activity_scrollwindow</property>
+                                                                <child>
+                                                                    <object class="GtkBox" id="Added_Weekly_Activity_Box">
+                                                                        <property name="orientation">GTK_ORIENTATION_VERTICAL</property>
+                                                                        <property name="spacing">10</property>
+                                                                    </object>
+                                                                </child>
+                                                            </object>
+                                                        </child>
+                                                         <child>
+                                                            <object class="GtkBox">
+                                                                <property name="height-request">30</property>
+                                                            </object>
+                                                        </child>
+                                                    </object>
+                                                </child>
+                                                <child type="overlay">
+                                                    <object class="GtkBox">
+                                                        <property name="valign">GTK_ALIGN_END</property>
+                                                        <property name="hexpand">TRUE</property>
+                                                        <property name="orientation">GTK_ORIENTATION_VERTICAL</property>
+                                                        <child>
+                                                            <object class="GtkBox">
+                                                                <property name="vexpand">TRUE</property>
+                                                                <property name="hexpand">TRUE</property>
+                                                            </object>
+                                                        </child>
+                                                        <child>
+                                                            <object class="GtkBox">
+                                                                <property name="name">BottomButtonBoxContainer</property>
+                                                                <child>
+                                                                    <object id="WeeklyButtonBox" class="GtkBox">
+                                                                        <property name="name">BottomButtonBox</property>
+                                                                        <property name="orientation">GTK_ORIENTATION_VERTICAL</property>
+                                                                        <child>
+                                                                            <object class="GtkBox" id="WeeklyContentBox">
+                                                                                <property name="hexpand">TRUE</property>
+                                                                                <property name="orientation">GTK_ORIENTATION_VERTICAL</property>
+                                                                                <child>
+                                                                                    <object class="GtkScrolledWindow" id="Weekly_Content_Scrolled">
+                                                                                        <property name="name">ContextScrolledWindow</property>
+                                                                                        <property name="hexpand">TRUE</property>
+                                                                                        <child>
+                                                                                            <object class="GtkBox">
+                                                                                                <property name="hexpand">TRUE</property>
+                                                                                                <property name="name">Content_Revealer</property>
+                                                                                                <child>
+                                                                                                    <object class="GtkBox">
+                                                                                                        <property name="hexpand">TRUE</property>
+                                                                                                        <property name="orientation">GTK_ORIENTATION_VERTICAL</property>
+                                                                                                        <property name="name">Content_Box</property>
+                                                                                                        <child>
+                                                                                                            <object class="GtkLabel">
+                                                                                                                <property name="name">TextView_Label</property>
+                                                                                                                <property name="hexpand">TRUE</property>
+                                                                                                                <property name="label">Weekly Activity</property>
+                                                                                                            </object>
+                                                                                                        </child>
+                                                                                                        <child>
+                                                                                                            <object class="GtkEntry" id="Add_Weekly_Activity_TV">
+                                                                                                                <property name="hexpand">TRUE</property>
+                                                                                                                <property name="name">ALL_Textview</property>
+                                                                                                            </object>
+                                                                                                        </child>
+                                                                                                        <child>
+                                                                                                            <object class="GtkLabel">
+                                                                                                                <property name="name">TextView_Label</property>
+                                                                                                                <property name="hexpand">TRUE</property>
+                                                                                                                <property name="label">Activity Frequency</property>
+                                                                                                            </object>
+                                                                                                        </child>
+                                                                                                        <child>
+                                                                                                            <object class="GtkSpinButton" id="Weekly_Activity_Frequency_TV">
+                                                                                                                <property name="hexpand">TRUE</property>
+                                                                                                                <property name="name">spinbutton</property>
+                                                                                                            </object>
+                                                                                                        </child>
+                                                                                                        <child>
+                                                                                                            <object class="GtkButton" id="Add_Weekly_Activity_BT">
+                                                                                                                <property name="name">check</property>
+                                                                                                                <property name="label">ADD</property>
+                                                                                                                <property name="height-request">50</property>
+                                                                                                            </object>
+                                                                                                        </child>
+                                                                                                    </object>
+                                                                                                </child>
+                                                                                            </object>
+                                                                                        </child>
+                                                                                    </object>
+                                                                                </child>
+                                                                            </object>
+                                                                        </child>
+                                                                        <child>
+                                                                            <object class="GtkButton" id="WeeklyAddButton">
+                                                                                <property name="hexpand">TRUE</property>
+                                                                                <property name="halign">GTK_ALIGN_FILL</property>
+                                                                                <property name="height-request">50</property>
+                                                                                <property name="label">+</property>
+                                                                                <property name="name">Add</property>
+                                                                            </object>
+                                                                        </child>
+                                                                    </object>
+                                                                </child>
+                                                            </object>
+                                                        </child>
+                                                    </object>
+                                                </child>
+                                            </object>
+                                        </child>
+                                    </object>
+                                </child>
+                            </object>
+                        </child>
+                    </object>
+                </child>
+                <child type="overlay">
+                    <object class="GtkBox">
+                        <property name="name">DrawerContainer</property>
+                        <property name="halign">GTK_ALIGN_START</property>
+                        <child>
+                            <object class="GtkBox" id="DrawerBox">
+                                <property name="name">DrawerBox</property>
+                                <property name="vexpand">FALSE</property>
+                                <property name="orientation">GTK_ORIENTATION_VERTICAL</property>
+                                <child>
+                                    <object class="GtkBox">
+                                        <property name="orientation">GTK_ORIENTATION_HORIZONTAL</property>
+                                        <child>
+                                            <object class="GtkButton" id="DrawerButton">
+                                                <property name="name">DrawerButton</property>
+                                                <property name="width-request">65</property>
+                                                <property name="height-request">65</property>
+                                                <property name="hexpand">FALSE</property>
+                                                <child>
+                                                    <object class="GtkBox" id="DrawerIconBox">
+                                                        <property name="name">DrawerIconBox</property>
+                                                        <property name="halign">GTK_ALIGN_CENTER</property>
+                                                    </object>
+                                                </child>
+                                            </object>
+                                        </child>
+                                    </object>
+                                </child>
+                            </object>
+                        </child>
+                    </object>
+                </child>
+            </object>
+        </child>
+    </object>
+</interface>
